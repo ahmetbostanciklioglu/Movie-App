@@ -10,7 +10,7 @@ import SwiftUI
 struct MovieDetailView: View {
     
     let movieId: Int
-    @ObservedObject private var movieDetailState = MovieDetailState()
+    @ObservedObject private var movieDetailState = MovieDetailViewModel()
     
     var body: some View {
         ZStack {

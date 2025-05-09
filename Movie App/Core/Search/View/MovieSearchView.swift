@@ -9,7 +9,7 @@ import SwiftUI
 
 struct MovieSearchView: View {
     
-    @ObservedObject var movieServiceState = MovieSearchState ()
+    @ObservedObject var movieServiceState = MovieSearchViewModel ()
     
     var body: some View {
         NavigationView {

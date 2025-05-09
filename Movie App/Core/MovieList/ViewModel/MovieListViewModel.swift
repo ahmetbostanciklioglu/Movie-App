@@ -7,15 +7,15 @@
 
 import SwiftUI
 
-class MovieListState: ObservableObject {
+class MovieListViewModel: ObservableObject {
     
     @Published var movies: [Movie]?
     @Published var isLoading = false
     @Published var error: NSError?
     
-    private let movieService: MovieService
+    private let movieService: MoviesService
     
-    init(movieService: MovieService = MovieStore.shared) {
+    init(movieService: MoviesService = MoviesServiceImpl.shared) {
         self.movieService = movieService
     }
     

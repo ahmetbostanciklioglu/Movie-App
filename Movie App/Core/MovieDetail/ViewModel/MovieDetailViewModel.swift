@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-class MovieDetailState: ObservableObject {
+class MovieDetailViewModel: ObservableObject {
     
     private let movieService: MovieService
     
@@ -15,7 +15,7 @@ class MovieDetailState: ObservableObject {
     @Published var isLoading = false
     @Published var error: NSError?
     
-    init(movieService: MovieService = MovieStore.shared) {
+    init(movieService: MovieService = MovieServiceImpl.shared) {
         self.movieService = movieService
     }
     

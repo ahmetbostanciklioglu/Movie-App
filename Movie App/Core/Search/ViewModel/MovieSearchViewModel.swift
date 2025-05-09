@@ -8,7 +8,7 @@
 import SwiftUI
 import Combine
 
-class MovieSearchState: ObservableObject {
+class MovieSearchViewModel: ObservableObject {
 
     @Published var query = ""
     @Published var movies: [Movie]?
@@ -17,10 +17,10 @@ class MovieSearchState: ObservableObject {
     
     private var subscriptionToken: AnyCancellable?
     
-    let movieService: MovieService?
+    let searchService: SearchService?
     
-    init(movieService: MovieService = MovieStore.shared) {
-        self.movieService = movieService
+    init(searchService: SearchService = SearchServiceImpl.shared) {
+        self.searchService = searchService
     }
     
     func startObserve() {
@@ -50,7 +50,7 @@ class MovieSearchState: ObservableObject {
         }
         
         self.isLoading = true
-        self.movieService?.searchMovie(query: query) {  [weak self] (result) in
+        self.searchService?.searchMovie(query: query) {  [weak self] (result) in
             guard let self, self.query == query else { return }
             
             self.isLoading = false

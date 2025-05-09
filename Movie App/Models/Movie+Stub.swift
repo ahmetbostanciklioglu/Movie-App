@@ -20,7 +20,6 @@ extension Movie {
 }
 
 extension Bundle {
-    
     func loadAndDecodeJSON<D: Decodable>(filename: String) throws -> D? {
         guard let url = self.url(forResource: filename, withExtension: "json") else {
             return  nil

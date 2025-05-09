@@ -9,10 +9,10 @@ import SwiftUI
 
 struct MovieListView: View {
     
-    @ObservedObject private var nowPlayingState = MovieListState()
-    @ObservedObject private var upcomingState = MovieListState()
-    @ObservedObject private var topRatedState = MovieListState()
-    @ObservedObject private var popularState = MovieListState()
+    @ObservedObject private var nowPlayingState = MovieListViewModel()
+    @ObservedObject private var upcomingState = MovieListViewModel()
+    @ObservedObject private var topRatedState = MovieListViewModel()
+    @ObservedObject private var popularState = MovieListViewModel()
     
     var body: some View {
         NavigationView {
